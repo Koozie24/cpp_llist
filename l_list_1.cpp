@@ -39,19 +39,45 @@ void Linked_List::insert_at_end(int data){
 }
 
 bool Linked_List::search(int data){
-    auto current_value = head;
+    auto current_node = head;
 
-    while(current_value){
-        if(current_value->data == data){
+    while(current_node){
+        if(current_node->data == data){
             return true;
         }
         else{
-            current_value = current_value->next;
+            current_node = current_node->next;
         }
     }
     return false;
 }
 
+bool Linked_List::delete_node(int data){
+    auto current_node = head;
+    Node *previous_node = nullptr;
+
+    while(current_node && current_node->data != data){
+        previous_node = current_node;
+        current_node = current_node->next;
+
+        if(current_node == nullptr){
+            return false;
+        }
+        if(current_node == head){
+            head = current_node->next;
+        }
+        else{
+            previous_node->next = current_node->next;
+        }
+
+        if(current_node == tail){
+            tail = previous_node;
+        }
+
+        delete current_node;
+        return true;
+    }
+}
 int main(){
 
     return 0;
