@@ -38,6 +38,20 @@ void Linked_List::insert_at_end(int data){
     }
 }
 
+bool Linked_List::search(int data){
+    auto current_value = head;
+
+    while(current_value){
+        if(current_value->data == data){
+            return true;
+        }
+        else{
+            current_value = current_value->next;
+        }
+    }
+    return false;
+}
+
 int main(){
 
     return 0;
