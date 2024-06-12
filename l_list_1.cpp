@@ -11,6 +11,18 @@ struct Node {
     Node(int data) : data(data), next(nullptr){}
 };
 
+class Linked_List {
+    Node* head;
+    Node* tail;
+
+    public: 
+        Linked_List() : head(nullptr), tail(nullptr) {}
+
+        void insert_at_end(int data);
+        bool search(int data);
+        bool delete_node(int data);
+};
+
 int main(){
 
     return 0;
