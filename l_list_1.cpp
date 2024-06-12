@@ -23,6 +23,21 @@ class Linked_List {
         bool delete_node(int data);
 };
 
+void Linked_List::insert_at_end(int data){
+    Node* new_node = new Node(data);
+
+    //no head set head and tail to reference of new_node
+    if(head == nullptr){
+        head = new_node;
+        tail = new_node;
+    }
+    //otherwise set tail to new node and update tail
+    else{
+        tail->next - new_node;
+        tail = new_node;
+    }
+}
+
 int main(){
 
     return 0;
